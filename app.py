@@ -10,8 +10,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Streamlit Page Config
-st.set_page_config(page_title="Chatbot1", page_icon="🤖")
-st.title("🤖 Chatbot1")
+st.set_page_config(page_title="K-chat", page_icon="🤖")
+st.title("🤖 K-chat")
 st.markdown("Powered by LangGraph and OpenRouter (GPT-3.5 Turbo)")
 
 # Configure OpenRouter
@@ -34,7 +34,7 @@ llm = ChatOpenAI(
     openai_api_base="https://openrouter.ai/api/v1",
     default_headers={
         "HTTP-Referer": "https://github.com/Thollarkings/chatbot1", # Optional, for OpenRouter rankings
-        "X-Title": "Chatbot1", # Optional
+        "X-Title": "K-chat", # Optional
     }
 )
 

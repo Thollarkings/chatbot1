@@ -1,4 +1,4 @@
-# Chatbot1 🤖
+# K-chat 🤖
 
 A web-based chatbot implementation using **Streamlit**, **LangGraph**, and **OpenRouter**. This project demonstrates a robust state-managed chat interface powered by GPT-3.5 Turbo.
 
