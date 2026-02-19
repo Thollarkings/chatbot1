@@ -39,7 +39,7 @@ A web-based chatbot implementation using **Streamlit**, **LangGraph**, and **Ope
 
 2. Start the Streamlit app:
 ```bash
-streamlit run 1.py
+streamlit run app.py
 ```
 
 ## 🛠️ How It Works
