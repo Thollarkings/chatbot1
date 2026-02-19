@@ -1,24 +1,20 @@
 # Chatbot1 🤖
 
-A streamlined chatbot implementation using **LangGraph** and **Ollama**. This project demonstrates a robust state-managed chat interface powered by local large language models.
+A web-based chatbot implementation using **Streamlit**, **LangGraph**, and **OpenRouter**. This project demonstrates a robust state-managed chat interface powered by GPT-3.5 Turbo.
 
 ## 🌟 Features
 
+- **Web UI**: Built with `Streamlit` for a clean, interactive chat experience.
 - **State-Managed Conversations**: Uses `LangGraph` to manage chat history and state transitions efficiently.
-- **Local AI Power**: Integrated with `Ollama` for running models like `llama3.2` locally, ensuring privacy and speed.
-- **Interactive CLI**: Easy-to-use command-line interface for real-time interaction.
-- **Extensible Architecture**: Built with a modular graph-based design, making it easy to add more complex logic or tools.
+- **Cloud-Ready LLM**: Integrated with `OpenRouter` to access GPT-3.5 Turbo, making it easy to deploy without local model requirements.
+- **Easy Deployment**: Ready to be hosted on Streamlit Cloud or other web platforms.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
 - Python 3.10+
-- [Ollama](https://ollama.com/) installed and running.
-- The `llama3.2` model pulled:
-  ```bash
-  ollama pull llama3.2
-  ```
+- An [OpenRouter API Key](https://openrouter.ai/keys).
 
 ### Installation
 
@@ -30,23 +26,29 @@ A streamlined chatbot implementation using **LangGraph** and **Ollama**. This pr
 
 2. Install dependencies:
    ```bash
-   pip install langgraph langchain_ollama
+   pip install -r requirements.txt
    ```
 
 ### Running the Chatbot
 
-Start the interactive session:
+1. Create a `.env` file in the root directory and add your API key:
+   ```text
+   OPENROUTER_API_KEY=your_key_here
+   ```
+   *(Alternatively, you can enter the key in the sidebar when the app runs.)*
+
+2. Start the Streamlit app:
 ```bash
-python 1.py
+streamlit run 1.py
 ```
 
 ## 🛠️ How It Works
 
 The chatbot uses a `StateGraph` to define the flow of messages:
-1. **User Input**: Captured via the CLI.
-2. **State Update**: Input is added to the message history.
-3. **LLM Node**: The graph invokes the Ollama LLM with the current message history.
-4. **Response**: The assistant's reply is appended to the state and streamed back to the user.
+1. **User Input**: Captured via the Streamlit chat input.
+2. **State Update**: Input is added to the session state and message history.
+3. **LLM Node**: The graph invokes the OpenRouter API with the current message history.
+4. **Response**: The assistant's reply is displayed in the UI and saved to the session state.
 
 ## 📝 License
 
